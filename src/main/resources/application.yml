@@ -1,0 +1,49 @@
+# mybatis
+mybatis:
+  type-aliases-package: com.shopping.miaosha.domain
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30
+  mapper-locations: classpath:com/shopping/miaosha/dao/*.xml
+# thymwleaf
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    mode: HTML5
+#datasource
+  datasource:
+    url: jdbc:mysql://localhost:3306/miaosha?useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: xdc1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+#redis
+  redis:
+    host: 192.168.157.129
+    port: 6379
+    jedis:
+      pool:
+        max-wait: 3ms
+        max-active: 10
+        max-idle: 10
+  jpa:
+    show-sql: true
+
+  #static
+  resources:
+    add-mappings: true
+    cache:
+      period: 3600s
+    chain:
+      cache: true
+      enabled: true
+      compressed: true
+      html-application-cache: true
+    static-locations: classpath:/static/
