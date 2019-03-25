@@ -47,3 +47,9 @@ spring:
       compressed: true
       html-application-cache: true
     static-locations: classpath:/static/
+
+  rabbitmq:
+    host: 192.168.157.129
+    port: 5672
+    username: admin
+    password: admin
